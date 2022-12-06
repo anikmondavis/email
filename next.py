@@ -61,13 +61,6 @@ def mail(messages):
     email_message = MIMEMultipart()
     email_message['Subject'] = subject
     email_message['From'] = email_sender
-    dir_path = "C:/Users/anikmon.davis/Documents/img"
-    entries = os.listdir('C:/Users/anikmon.davis/Documents/img')
-    for f in entries:  # add files to the message
-        file_path = os.path.join(dir_path, f)
-        attachment = MIMEApplication(open(file_path, "rb").read(), _subtype="txt")
-        attachment.add_header('Content-Disposition','attachment', filename=f)
-        email_message.attach(attachment)
     
    # html = '''<h3>Azure Synapse Status Log</h3>
     #<div>'''+ messages+'''<div>'''
