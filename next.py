@@ -76,3 +76,4 @@ def mail(messages):
             smtp.sendmail(email_sender, i, email_string)
 
 mail('hello')
+print("test to trigger")
