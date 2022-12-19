@@ -4,12 +4,12 @@ pipeline{
         stage("build"){
             when{
                 expression{
-                    BRANCH_NAME=='master'
+                    env.BRANCH_NAME.startsWith('PR')
                 }
             }
             
             steps{
-                echo "hello world"
+                echo "This is when pr was rasied"
             }
         }
         stage("test"){
