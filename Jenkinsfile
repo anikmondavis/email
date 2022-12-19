@@ -2,12 +2,6 @@ pipeline{
     agent any
     stages{
         stage("build"){
-            when{
-                expression{
-                    env.BRANCH_NAME.startsWith('PR')
-                }
-            }
-            
             steps{
                 echo "This is when pr was rasied"
             }
